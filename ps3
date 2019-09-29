@@ -39,6 +39,27 @@ graph export residuals.png, replace
 twoway (scatter higradechild uhat_x ) (lfit  higradechild uhat_x)
 graph export residual_y.png, replace
 
+matrix list x1
+matrix list x2
+
+** Question 6 
+set matsize 2000
+
+*generate matrix x1
+mkmat M_higrade* F_higrade*, matrix(x1)
+matrix list x1
+
+*generate matrix x2
+g one =.
+g one =1
+mkmat one* M_smoke* F_smoke* M_drink* F_drink* numkids* highinc*, matrix(x2)
+matrix list x2
+
+*generate matrix Y
+mkmat higradechild* , matrix(y)
+matrix list y
+
+
 
 **Question 8
 
