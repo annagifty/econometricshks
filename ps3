@@ -64,7 +64,21 @@ matrix define identity=I(1457)
 matrix list identity 
 
 *generate x2 transpose
-matrix define x2_transpose= x2'
+matrix define x2_tp= x2'
+
+*
+matrix define quantity = x2_transpose * x2
+matrix define inv_x= inv(quantity)
+matrix list inv_x
+
+matrix define final = identity - x2 * inv_x * x2_transpose
+matrix define x_1_2 = final * x1
+matrix define y_2 = final * y
+
+*calculate beta1
+matrix define inv_B = inv(x_1_2' * x_1_2) 
+matrix define beta1 = inv_B * x_1_2' * y_2 
+matrix list beta1
 
 
 
