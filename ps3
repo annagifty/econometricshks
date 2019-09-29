@@ -40,4 +40,13 @@ twoway (scatter higradechild uhat_x ) (lfit  higradechild uhat_x)
 graph export residual_y.png, replace
 
 
+**Question 8
 
+*a) yes if the adoption agency chooses to focus on the statistically significant results, such as, mother of adopted family's schooling and the number of kids currently in the adopting family. Other features of the adopted family do not have statistically significant effects on a child's educational attainment.
+*Mom schooling years raises grade
+*Number of kids lowers grade
+*Recommendation: Adoption administrators should priortize mothers more schooling for children with lower educational attainment and in general, families that do not have large families. 
+
+*b) no
+*it's out the frame of reference of the analysis because we are analyzing the causal effect of we are assessing do not account for future changes in schooling for the mother AFTER the adoption vs. if she had gone back to school after the adoption it would be in our fram of reference. 
+*Recommendation: Mothers who want to have an impact on child's educational attainment should strive to increase their number of schooling years before adopting a child. 
