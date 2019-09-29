@@ -59,6 +59,12 @@ matrix list x2
 mkmat higradechild* , matrix(y)
 matrix list y
 
+*generate identity matrix 
+matrix define identity=I(1457)
+matrix list identity 
+
+*generate x2 transpose
+matrix define x2_transpose= x2'
 
 
 **Question 8
