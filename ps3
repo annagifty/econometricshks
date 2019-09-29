@@ -4,7 +4,7 @@ reg higradechild M_higrade, hc
 ** Question 2
 reg higradechild M_higrade F_higrade M_smoke F_smoke M_drink F_drink numkids highinc, hc
 
-** Question 3 // check document
+** Question 4 // check document
 
 *regress using Q2 with robust heteroskedastic errors
 reg higradechild M_higrade F_higrade M_smoke F_smoke M_drink F_drink numkids highinc, robust
@@ -12,5 +12,20 @@ reg higradechild M_higrade F_higrade M_smoke F_smoke M_drink F_drink numkids hig
 *find residuals of Yi == Y squiggly 
 predict uhat, residuals
 
+*double check residuals
+br uhat
+
+** Question 4
+*regress using Q2 with robust heteroskedastic errors
+reg higradechild M_higrade F_higrade M_smoke F_smoke M_drink F_drink numkids highinc, robust
+*find residuals of Yi == Y squiggly 
+predict uhat, residuals
+*double check residuals
+br uhat
+
+*now find residuals of X
+reg M_higrade F_higrade M_smoke F_smoke M_drink F_drink numkids highinc, robust
+*find residuals of Xi == X squiggly 
+predict uhat, residuals
 *double check residuals
 br uhat
