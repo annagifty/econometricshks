@@ -67,6 +67,14 @@ matrix list identity
 matrix define x2_transpose= x2'
 
 
+
+
+
+**Question 7 
+*generate mi_higrade2
+g m_higrade2= M_higrade^2
+
+
 **Question 8
 
 *a) yes if the adoption agency chooses to focus on the statistically significant results, such as, mother of adopted family's schooling and the number of kids currently in the adopting family. Other features of the adopted family do not have statistically significant effects on a child's educational attainment.
