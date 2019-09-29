@@ -19,13 +19,20 @@ br uhat
 *regress using Q2 with robust heteroskedastic errors
 reg higradechild M_higrade F_higrade M_smoke F_smoke M_drink F_drink numkids highinc, robust
 *find residuals of Yi == Y squiggly 
-predict uhat, residuals
+predict uhat_y, residuals
 *double check residuals
 br uhat
 
 *now find residuals of X
 reg M_higrade F_higrade M_smoke F_smoke M_drink F_drink numkids highinc, robust
 *find residuals of Xi == X squiggly 
-predict uhat, residuals
+predict uhat_x, residuals
 *double check residuals
 br uhat
+
+** Question 5 
+*theta A
+twoway scatter uhat_y uhat_x
+*theta B
+twoway scatter higradechild uhat_x 
+
