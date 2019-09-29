@@ -32,7 +32,12 @@ br uhat
 
 ** Question 5 
 *theta A
-twoway scatter uhat_y uhat_x
+twoway (scatter  uhat_y uhat_x) (lfit  uhat_y uhat_x)
+graph export residuals.png, replace
+
 *theta B
-twoway scatter higradechild uhat_x 
+twoway (scatter higradechild uhat_x ) (lfit  higradechild uhat_x)
+graph export residual_y.png, replace
+
+
 
