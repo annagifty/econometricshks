@@ -88,12 +88,12 @@ matrix list beta1
 
 **Question 7 
 *generate mi_higrade2
-g m_higrade2= M_higrade^2
+g m_higrade2= (M_higrade)^2
 
-mkmat m_higrade2* F_higrade*, matrix(x1_2)
+mkmat m_higrade2* M_higrade*, matrix(x1_2)
 matrix list x1_2
 
-mkmat one* M_smoke* F_smoke* M_drink* F_drink* numkids* highinc*, matrix(x2_2)
+mkmat one* F_higrade* M_smoke* F_smoke* M_drink* F_drink* numkids* highinc*, matrix(x2_2)
 matrix list x2_2
 
 *generate matrix Y
@@ -105,7 +105,7 @@ matrix define identity_2=I(1457)
 matrix list identity_2 
 
 *generate x2 transpose
-matrix define x2_transpose2= x2_2'
+matrix define x2_transpose2= (x2_2)'
 
 matrix define quantity = x2_transpose2 * x2_2
 matrix define inv_x2= inv(quantity)
