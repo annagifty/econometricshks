@@ -87,6 +87,19 @@ matrix list beta1
 
 
 **Question 7 
+
+reg M_higrade F_higrade M_smoke F_smoke M_drink F_drink numkids highinc, robust
+predict uhat_xsq, residuals
+g xsq2= uhat_xsq^2
+
+reg higradechild F_higrade M_smoke F_smoke M_drink F_drink numkids highinc,robust
+predict uhat_ysq, residuals
+reg uhat_ysq uhat_xsq xsq2
+
+reg m_higrade2 F_higrade M_smoke F_smoke M_drink F_drink numkids highinc, robust
+predict uhat_mg2,residuals
+reg uhat_ysq uhat_xsq uhat_mg2
+
 *generate mi_higrade2
 g m_higrade2= (M_higrade)^2
 
