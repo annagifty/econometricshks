@@ -80,13 +80,51 @@ matrix define inv_B = inv(x_1_2' * x_1_2)
 matrix define beta1 = inv_B * x_1_2' * y_2 
 matrix list beta1
 
-
-
+*** beta1[2,1] **********
+*            higradechild
+* M_higrade     .06404113
+* F_higrade    -.01391841
 
 
 **Question 7 
 *generate mi_higrade2
 g m_higrade2= M_higrade^2
+
+mkmat m_higrade2* F_higrade*, matrix(x1_2)
+matrix list x1_2
+
+mkmat one* M_smoke* F_smoke* M_drink* F_drink* numkids* highinc*, matrix(x2_2)
+matrix list x2_2
+
+*generate matrix Y
+mkmat higradechild* , matrix(y_2)
+matrix list y_2
+
+*generate identity matrix 
+matrix define identity_2=I(1457)
+matrix list identity_2 
+
+*generate x2 transpose
+matrix define x2_transpose2= x2_2'
+
+matrix define quantity = x2_transpose2 * x2_2
+matrix define inv_x2= inv(quantity)
+matrix list inv_x2
+
+matrix define final = identity_2 - x2_2 * inv_x2 * x2_transpose2
+matrix define x_1_22 = final * x1_2
+matrix define y_22 = final * y_2
+
+*calculate beta1
+matrix define inv_B = inv(x_1_22' * x_1_22) 
+matrix define beta1_2 = inv_B * x_1_22' * y_22 
+matrix list beta1_2
+
+***beta1_2[2,1]*********
+*            higradechild
+*m_higrade2     .00204746
+*F_higrade    -.01271952
+
 
 
 **Question 8
